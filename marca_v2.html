@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identidad FlorDesk - FlorDesk</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { margin: 0; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a0a1a 50%, #0a0a1a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .title-text {
+            font-family: 'Orbitron', monospace;
+            text-shadow: 0 0 10px #00ffff;
+        }
+        
+        .accent-text {
+            font-family: 'Rajdhani', sans-serif;
+            text-shadow: 0 0 10px #ffbf00;
+        }
+        
+        .core-box {
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            background: rgba(0, 0, 0, 0.4);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+        }
+        
+        .brand-item {
+            border-left: 3px solid #ffbf00;
+            padding-left: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .circuit-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(circle at 50% 50%, rgba(255, 191, 0, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+            opacity: 0.3;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container flex relative">
+        <div class="circuit-bg"></div>
+        
+        <div class="w-1/2 flex flex-col justify-center pl-20 pr-10 z-10">
+            <h1 class="title-text text-6xl font-black text-cyan-400 mb-2 tracking-widest transform -skew-x-6">
+                NÚCLEO DE
+            </h1>
+            <h1 class="title-text text-6xl font-black text-cyan-400 mb-10 tracking-widest ml-12">
+                MARCA
+            </h1>
+            
+            <div class="space-y-8">
+                <div class="brand-item">
+                    <h3 class="accent-text text-2xl font-bold text-amber-400 uppercase">Creatividad</h3>
+                    <p class="text-white text-lg opacity-80">Diseños que rompen la monotonía del estudio convencional.</p>
+                </div>
+                
+                <div class="brand-item">
+                    <h3 class="accent-text text-2xl font-bold text-amber-400 uppercase">Responsabilidad</h3>
+                    <p class="text-white text-lg opacity-80">Compromiso radical con el uso de materiales reciclados.</p>
+                </div>
+                
+                <div class="brand-item">
+                    <h3 class="accent-text text-2xl font-bold text-amber-400 uppercase">Alegría</h3>
+                    <p class="text-white text-lg opacity-80">Colores y formas que inspiran un entorno de trabajo positivo.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="w-1/2 flex items-center justify-center p-16 z-10">
+            <div class="core-box p-12 relative transform rotate-3">
+                <div class="absolute -top-4 -left-4 w-12 h-12 border-t-4 border-l-4 border-cyan-400"></div>
+                <div class="absolute -bottom-4 -right-4 w-12 h-12 border-b-4 border-r-4 border-cyan-400"></div>
+                
+                <div class="text-center">
+                    <p class="accent-text text-4xl font-black text-amber-400 mb-4 tracking-widest">FLORDESK</p>
+                    <div class="w-full h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent mb-6"></div>
+                    <p class="text-white text-xl italic opacity-90">"Organización con Alma Sostenible"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-8 right-8 text-cyan-400 text-2xl font-bold opacity-60">
+            06
+        </div>
+    </div>
+</body>
+</html>

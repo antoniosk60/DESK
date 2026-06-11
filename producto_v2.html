@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diseño Floral Sostenible - FlorDesk</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { margin: 0; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a0a1a 50%, #0a0a1a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .title-text {
+            font-family: 'Orbitron', monospace;
+            text-shadow: 
+                0 0 5px #00ffff,
+                0 0 10px #00ffff,
+                0 0 15px #00ffff;
+        }
+        
+        .accent-text {
+            font-family: 'Rajdhani', sans-serif;
+            text-shadow: 
+                0 0 5px #ffbf00,
+                0 0 10px #ffbf00;
+        }
+        
+        .image-container {
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0, 255, 255, 0.3);
+        }
+        
+        .image-container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(255, 191, 0, 0.2) 0%, transparent 100%);
+            z-index: 1;
+        }
+        
+        .equation-box {
+            border: 1px solid rgba(0, 255, 255, 0.4);
+            background: rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+        }
+        
+        .pulse-glow {
+            animation: pulse-glow 3s infinite alternate;
+        }
+        
+        @keyframes pulse-glow {
+            0% { text-shadow: 0 0 5px #ffbf00, 0 0 10px #ffbf00; }
+            100% { text-shadow: 0 0 10px #ffbf00, 0 0 20px #ffbf00, 0 0 30px #ffbf00; }
+        }
+        
+        .circuit-line {
+            position: absolute;
+            background: linear-gradient(90deg, #00ffff, transparent);
+            height: 1px;
+            width: 100px;
+            opacity: 0.6;
+        }
+        
+        .diagonal-divider {
+            position: absolute;
+            width: 150%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #ffbf00, transparent);
+            transform: rotate(-30deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container flex relative">
+        <div class="circuit-line" style="top: 20%; right: 10%; width: 150px; background: linear-gradient(90deg, transparent, #ffbf00);"></div>
+        <div class="circuit-line" style="bottom: 30%; left: 5%; width: 120px;"></div>
+        <div class="diagonal-divider" style="top: 40%; left: -20%;"></div>
+        
+        <!-- Right image section -->
+        <div class="w-5/12 flex items-center justify-center p-8 relative order-2">
+            <div class="image-container w-full h-80 transform -rotate-2">
+                <img src="/home/ubuntu/flordesk_presentacion/hero_organizer.png" alt="FlorDesk Organizer" class="w-full h-full object-cover">
+            </div>
+            
+            <div class="equation-box absolute top-1/4 left-0 transform -translate-x-1/2 p-6 rotate-12 z-20">
+                <div class="text-3xl font-bold">
+                    <span class="text-white">ECO</span>
+                    <span class="text-amber-400 mx-2">+</span>
+                    <span class="text-cyan-400">DISEÑO</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Left content section -->
+        <div class="w-7/12 flex flex-col justify-center pl-16 pr-8 py-12 relative z-10 order-1">
+            <h1 class="title-text text-5xl font-black text-cyan-400 mb-2 tracking-wider">
+                NATURALEZA <span class="text-amber-400">+</span> DISEÑO
+            </h1>
+            <h1 class="title-text text-5xl font-black text-cyan-400 mb-6 tracking-wider">
+                <span class="text-amber-400">=</span> ORDEN
+            </h1>
+            
+            <div class="w-32 h-1 bg-gradient-to-r from-cyan-400 to-amber-400 mb-8"></div>
+            
+            <div class="space-y-6 text-white">
+                <p class="accent-text text-2xl font-bold text-amber-400 tracking-wide pulse-glow">
+                    EL FUTURO DEL ESCRITORIO
+                </p>
+                
+                <p class="text-xl font-light opacity-90 leading-relaxed">
+                    FlorDesk no es solo un objeto—es una <span class="text-cyan-300">extensión funcional</span> de tu espacio de estudio. La simbiosis entre lo orgánico y lo técnico.
+                </p>
+                
+                <p class="text-lg opacity-80 leading-relaxed">
+                    Compartimentos inspirados en pétalos que se adaptan a tus herramientas escolares. Fabricado con cartón reciclado de alta resistencia que desafía lo convencional. Este no es un organizador común—es <span class="italic font-semibold text-amber-300">innovación artesanal</span>.
+                </p>
+                
+                <div class="mt-6 flex items-center">
+                    <div class="w-1 h-16 bg-amber-400 mr-4"></div>
+                    <p class="accent-text text-xl font-bold text-cyan-300 tracking-wider uppercase">
+                        El siguiente nivel de<br>organización es sostenible
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-8 right-8 text-cyan-400 text-2xl font-bold opacity-60">
+            <div class="w-12 h-12 border-2 border-amber-400 flex items-center justify-center transform -rotate-12">
+                02
+            </div>
+        </div>
+    </div>
+</body>
+</html>

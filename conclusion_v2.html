@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conclusión - FlorDesk</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { margin: 0; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a0a1a 50%, #0a0a1a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .title-text {
+            font-family: 'Orbitron', monospace;
+            text-shadow: 
+                0 0 5px #00ffff,
+                0 0 10px #00ffff,
+                0 0 15px #00ffff;
+        }
+        
+        .accent-text {
+            font-family: 'Rajdhani', sans-serif;
+            text-shadow: 
+                0 0 5px #ffbf00,
+                0 0 10px #ffbf00;
+        }
+        
+        .image-container {
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            box-shadow: 
+                0 0 10px rgba(0, 255, 255, 0.2),
+                0 0 20px rgba(0, 255, 255, 0.1);
+        }
+        
+        .image-container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(255, 191, 0, 0.2) 0%, transparent 100%);
+            z-index: 1;
+        }
+        
+        .glitch-text {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .glitch-text::before,
+        .glitch-text::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .glitch-text::before {
+            left: 2px;
+            text-shadow: -1px 0 #ffbf00;
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim-1 5s infinite linear alternate-reverse;
+        }
+        
+        .glitch-text::after {
+            left: -2px;
+            text-shadow: 1px 0 #00ffff;
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim-2 5s infinite linear alternate-reverse;
+        }
+        
+        @keyframes glitch-anim-1 {
+            0% { clip: rect(24px, 450px, 90px, 0); }
+            20% { clip: rect(62px, 450px, 78px, 0); }
+            40% { clip: rect(12px, 450px, 43px, 0); }
+            60% { clip: rect(48px, 450px, 33px, 0); }
+            80% { clip: rect(71px, 450px, 22px, 0); }
+            100% { clip: rect(35px, 450px, 76px, 0); }
+        }
+        
+        @keyframes glitch-anim-2 {
+            0% { clip: rect(12px, 450px, 70px, 0); }
+            20% { clip: rect(28px, 450px, 55px, 0); }
+            40% { clip: rect(54px, 450px, 32px, 0); }
+            60% { clip: rect(81px, 450px, 12px, 0); }
+            80% { clip: rect(42px, 450px, 60px, 0); }
+            100% { clip: rect(32px, 450px, 44px, 0); }
+        }
+        
+        .vr-grid {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 255, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 20px 20px;
+            perspective: 500px;
+            transform: rotateX(60deg);
+            opacity: 0.2;
+        }
+        
+        .floating-element {
+            position: absolute;
+            border: 1px solid rgba(255, 191, 0, 0.4);
+            transform: rotate(15deg);
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container flex relative">
+        <div class="vr-grid"></div>
+        
+        <div class="floating-element w-16 h-16" style="top: 15%; right: 10%;"></div>
+        <div class="floating-element w-24 h-24" style="bottom: 20%; left: 15%; transform: rotate(-10deg);"></div>
+        
+        <!-- Right image section -->
+        <div class="w-5/12 flex items-center justify-center p-12 relative order-2">
+            <div class="image-container w-full h-96 transform -rotate-2">
+                <img src="/home/ubuntu/flordesk_presentacion/hero_organizer.png" alt="FlorDesk Final" class="w-full h-full object-cover">
+            </div>
+            
+            <div class="absolute top-24 right-8 bg-black bg-opacity-70 p-3 border-r-4 border-cyan-400 max-w-xs transform rotate-3">
+                <p class="text-amber-300 text-sm italic">
+                    "El orden no es solo una meta, es el punto de partida para una mente creativa y sostenible."
+                </p>
+            </div>
+        </div>
+        
+        <!-- Left content section -->
+        <div class="w-7/12 flex flex-col justify-center pl-16 pr-8 py-12 relative z-10 order-1">
+            <h1 class="title-text text-5xl font-black text-cyan-400 mb-6 tracking-wider">
+                EL <span class="glitch-text" data-text="FUTURO">FUTURO</span> DEL 
+                <br><span class="ml-16">ORDEN <span class="text-amber-400">ESCOLAR</span></span>
+            </h1>
+            
+            <div class="w-32 h-1 bg-gradient-to-r from-cyan-400 to-amber-400 mb-8 ml-8"></div>
+            
+            <div class="space-y-6 text-white ml-8">
+                <p class="accent-text text-2xl font-bold text-amber-400 tracking-wide">
+                    LA EVOLUCIÓN DEL ESCRITORIO
+                </p>
+                
+                <p class="text-xl font-light opacity-90 leading-relaxed">
+                    FlorDesk demuestra que la <span class="italic text-cyan-300">sostenibilidad</span> y el diseño vanguardista pueden coexistir en tu espacio de estudio.
+                </p>
+                
+                <p class="text-lg opacity-80 leading-relaxed">
+                    Nuestros organizadores de cartón reciclado no solo ordenan tus útiles, sino que transforman tu entorno en una estación de trabajo inspiradora y responsable.
+                </p>
+                
+                <div class="flex space-x-4 mt-8">
+                    <div class="border-l-2 border-cyan-400 pl-4">
+                        <p class="text-cyan-300 text-lg font-medium">ORDEN</p>
+                        <p class="text-sm opacity-70">Optimización total</p>
+                    </div>
+                    
+                    <div class="border-l-2 border-amber-400 pl-4">
+                        <p class="text-amber-300 text-lg font-medium">DISEÑO</p>
+                        <p class="text-sm opacity-70">Estética Neón</p>
+                    </div>
+                    
+                    <div class="border-l-2 border-cyan-400 pl-4">
+                        <p class="text-cyan-300 text-lg font-medium">ECO</p>
+                        <p class="text-sm opacity-70">Cartón Reciclado</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-8 right-8 text-cyan-400 text-2xl font-bold opacity-60">
+            <div class="w-12 h-12 border-2 border-amber-400 flex items-center justify-center transform -rotate-12">
+                06
+            </div>
+        </div>
+    </div>
+</body>
+</html>

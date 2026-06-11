@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esencia Ecológica - FlorDesk</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { margin: 0; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a0a1a 50%, #0a0a1a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .title-text {
+            font-family: 'Orbitron', monospace;
+            text-shadow: 
+                0 0 5px #00ffff,
+                0 0 10px #00ffff,
+                0 0 15px #00ffff;
+        }
+        
+        .accent-text {
+            font-family: 'Rajdhani', sans-serif;
+            text-shadow: 
+                0 0 5px #ffbf00,
+                0 0 10px #ffbf00;
+        }
+        
+        .image-container {
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0, 255, 255, 0.3);
+        }
+        
+        .image-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 191, 0, 0.2) 0%, transparent 50%);
+            z-index: 1;
+        }
+        
+        .data-strand {
+            position: absolute;
+            width: 2px;
+            background: linear-gradient(to bottom, #00ffff, #ffbf00);
+            animation: pulse 3s infinite alternate;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 0.3; }
+            100% { opacity: 0.8; }
+        }
+        
+        .binary-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(rgba(0, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 20px 20px;
+            opacity: 0.2;
+        }
+        
+        .highlight-box {
+            border: 1px solid #ffbf00;
+            box-shadow: 0 0 10px rgba(255, 191, 0, 0.3);
+            transform: skew(-5deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container flex relative">
+        <div class="binary-overlay"></div>
+        
+        <div class="data-strand" style="height: 150px; top: 10%; left: 20%;"></div>
+        <div class="data-strand" style="height: 200px; top: 30%; left: 30%;"></div>
+        <div class="data-strand" style="height: 180px; top: 50%; left: 15%;"></div>
+        <div class="data-strand" style="height: 120px; top: 70%; right: 25%;"></div>
+        
+        <!-- Right image section -->
+        <div class="w-5/12 flex items-center justify-center p-8 relative order-2">
+            <div class="image-container w-full h-96 transform -rotate-2">
+                <img src="/home/ubuntu/flordesk_presentacion/cardboard_neon.png" alt="Cartón Reciclado Neón" class="w-full h-full object-cover">
+            </div>
+            
+            <div class="absolute bottom-16 left-0 bg-black bg-opacity-70 p-3 border-r-4 border-cyan-400 max-w-xs">
+                <p class="text-amber-300 text-sm font-medium">
+                    El cartón reciclado es el componente base de nuestra arquitectura escolar.
+                </p>
+            </div>
+        </div>
+        
+        <!-- Left content section -->
+        <div class="w-7/12 flex flex-col justify-center pl-16 pr-8 py-12 relative z-10 order-1">
+            <h1 class="title-text text-5xl font-black text-cyan-400 mb-6 tracking-wider transform -skew-x-6">
+                ADN ECOLÓGICO
+            </h1>
+            
+            <div class="w-32 h-1 bg-gradient-to-r from-cyan-400 to-amber-400 mb-8"></div>
+            
+            <div class="space-y-6 text-white">
+                <p class="accent-text text-2xl font-bold text-amber-400 tracking-wide">
+                    NUESTRO CÓDIGO FUENTE SOSTENIBLE
+                </p>
+                
+                <div class="highlight-box p-4 bg-black bg-opacity-50 my-6">
+                    <p class="text-xl font-light opacity-90 leading-relaxed">
+                        En FlorDesk, el <span class="text-cyan-300 font-medium">reciclaje</span> no es una opción, es la estructura fundamental que codifica cada producto.
+                    </p>
+                </div>
+                
+                <p class="text-lg opacity-80 leading-relaxed">
+                    Utilizamos fibras de cartón reciclado de alta densidad para crear una estructura que es a la vez ligera y resistente. Nuestra ingeniería optimiza el uso de materiales para minimizar el impacto ambiental sin sacrificar el diseño.
+                </p>
+                
+                <p class="accent-text text-xl font-bold text-amber-300 tracking-wider uppercase mt-6">
+                    VALORES QUE CONSTRUYEN EL MAÑANA
+                </p>
+            </div>
+            
+            <div class="absolute top-24 right-8 transform rotate-12">
+                <div class="text-cyan-400 text-sm border border-cyan-400 p-2 bg-black bg-opacity-70">
+                    ECO // SYSTEM // REUSE
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-8 right-8 text-cyan-400 text-2xl font-bold opacity-60">
+            <div class="w-12 h-12 border-2 border-cyan-400 flex items-center justify-center transform -rotate-12">
+                03
+            </div>
+        </div>
+    </div>
+</body>
+</html>

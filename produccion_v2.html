@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingeniería Artesanal - FlorDesk</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { margin: 0; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a0a1a 50%, #0a0a1a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .title-text { font-family: 'Orbitron', monospace; text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 15px #00ffff; }
+        .accent-text { font-family: 'Rajdhani', sans-serif; text-shadow: 0 0 5px #ffbf00, 0 0 10px #ffbf00; }
+        .image-container { position: relative; overflow: hidden; border: 1px solid rgba(0, 255, 255, 0.3); box-shadow: 0 0 10px rgba(0, 255, 255, 0.2), 0 0 20px rgba(0, 255, 255, 0.1); }
+        .image-container::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(255, 191, 0, 0.2) 0%, transparent 100%); z-index: 1; }
+        .vertical-line { position: absolute; width: 2px; background: linear-gradient(to bottom, #00ffff, transparent); opacity: 0.7; }
+        .height-marker { position: absolute; width: 80px; height: 1px; background: rgba(0, 255, 255, 0.5); left: 0; }
+        .height-marker::after { content: ''; position: absolute; right: 0; top: -3px; width: 7px; height: 7px; border-radius: 50%; background: #00ffff; }
+        .city-feature { position: relative; padding-left: 20px; border-left: 2px solid #ffbf00; margin-bottom: 12px; transition: all 0.3s ease; }
+        .city-feature:hover { transform: translateX(5px); border-left-color: #00ffff; }
+        .diagonal-accent { position: absolute; width: 140px; height: 2px; background: linear-gradient(90deg, transparent, #ffbf00); transform: rotate(-45deg); opacity: 0.6; }
+    </style>
+</head>
+<body>
+    <div class="slide-container flex relative">
+        <div class="vertical-line" style="height: 300px; top: 18%; left: 14%;"></div>
+        <div class="height-marker" style="top: 18%; left: 14%;"><span class="text-cyan-300 text-xs ml-3">LVL_04</span></div>
+        <div class="height-marker" style="top: 30%; left: 14%;"><span class="text-cyan-300 text-xs ml-3">LVL_03</span></div>
+        <div class="height-marker" style="top: 42%; left: 14%;"><span class="text-cyan-300 text-xs ml-3">LVL_01</span></div>
+        <div class="diagonal-accent" style="top: 22%; right: 18%;"></div>
+        <div class="diagonal-accent" style="bottom: 30%; left: 22%; background: linear-gradient(90deg, transparent, #00ffff);"></div>
+        <div class="w-1/2 flex flex-col justify-center pl-16 pr-6 py-8 relative z-10">
+            <h1 class="title-text text-5xl font-black text-cyan-400 mb-2 tracking-wider transform -skew-x-6">INGENIERÍA</h1>
+            <h1 class="title-text text-5xl font-black text-cyan-400 mb-4 tracking-wider ml-12">ARTESANAL</h1>
+            <div class="w-32 h-1 bg-gradient-to-r from-cyan-400 to-amber-400 mb-6"></div>
+            <div class="space-y-5 text-white">
+                <p class="accent-text text-2xl font-bold text-amber-400 tracking-wide">CONSTRUYENDO EL FUTURO SOSTENIBLE</p>
+                <p class="text-xl font-light opacity-90 leading-relaxed">Nuestro proceso de fabricación fusiona la artesanía tradicional con una <span class="text-cyan-300">ingeniería de precisión</span> para transformar materiales reciclados en estructuras funcionales.</p>
+                <div class="space-y-3 mt-4">
+                    <div class="city-feature">
+                        <h3 class="text-lg font-semibold text-cyan-300">SÍNTESIS DE MATERIAL</h3>
+                        <p class="text-sm opacity-80">Selección rigurosa de cartón reciclado de alta densidad para asegurar la integridad estructural.</p>
+                    </div>
+                    <div class="city-feature">
+                        <h3 class="text-lg font-semibold text-cyan-300">CORTE DE PRECISIÓN</h3>
+                        <p class="text-sm opacity-80">Modelado exacto de piezas que conformarán los compartimentos inspirados en la naturaleza.</p>
+                    </div>
+                    <div class="city-feature">
+                        <h3 class="text-lg font-semibold text-cyan-300">ENSAMBLAJE Y DISEÑO</h3>
+                        <p class="text-sm opacity-80">Unión de componentes y aplicación de acabados estéticos con identidad ciberpunk.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w-1/2 flex items-center justify-center p-8 relative">
+            <div class="image-container w-full" style="height:360px; transform: rotate(2deg);">
+                <img src="/home/ubuntu/flordesk_presentacion/cardboard_neon.png" alt="Producción FlorDesk" class="w-full h-full object-cover">
+            </div>
+            <div class="absolute" style="bottom:18%; right:10%; background:rgba(0,0,0,0.7); padding:10px 12px; border-right:4px solid #ffbf00; max-width:220px; transform: rotate(-2deg);">
+                <p class="text-cyan-300 text-sm italic">"La fabricación artesanal es la base de nuestra infraestructura creativa."</p>
+            </div>
+        </div>
+        <div class="absolute bottom-6 right-6 text-cyan-400 text-2xl font-bold opacity-60">
+            <div class="w-12 h-12 border-2 border-amber-400 flex items-center justify-center transform rotate-12">05</div>
+        </div>
+    </div>
+</body>
+</html>

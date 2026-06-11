@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conexión con el Usuario - FlorDesk</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { margin: 0; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a0a1a 50%, #0a0a1a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .title-text {
+            font-family: 'Orbitron', monospace;
+            text-shadow: 
+                0 0 5px #00ffff,
+                0 0 10px #00ffff,
+                0 0 15px #00ffff;
+        }
+        
+        .accent-text {
+            font-family: 'Rajdhani', sans-serif;
+            text-shadow: 
+                0 0 5px #ffbf00,
+                0 0 10px #ffbf00;
+        }
+        
+        .image-container {
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            box-shadow: 
+                0 0 10px rgba(0, 255, 255, 0.2),
+                0 0 20px rgba(0, 255, 255, 0.1);
+        }
+        
+        .image-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 191, 0, 0.2) 0%, transparent 100%);
+            z-index: 1;
+        }
+        
+        .neural-line {
+            position: absolute;
+            height: 2px;
+            background: linear-gradient(90deg, #00ffff, transparent);
+            opacity: 0.6;
+        }
+        
+        .neural-pulse {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #00ffff;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            70% { transform: scale(2); opacity: 0; }
+            100% { transform: scale(1); opacity: 0; }
+        }
+        
+        .interface-item {
+            position: relative;
+            padding-left: 20px;
+            border-left: 2px solid #ffbf00;
+            margin-bottom: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .interface-item:hover {
+            transform: translateX(5px);
+            border-left-color: #00ffff;
+        }
+        
+        .circuit-pattern {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(0, 255, 255, 0.05) 1px, transparent 1px),
+                radial-gradient(circle at 20% 40%, rgba(255, 191, 0, 0.05) 1px, transparent 1px),
+                radial-gradient(circle at 30% 60%, rgba(0, 255, 255, 0.05) 1px, transparent 1px),
+                radial-gradient(circle at 40% 80%, rgba(255, 191, 0, 0.05) 1px, transparent 1px);
+            background-size: 100px 100px;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container flex relative">
+        <div class="circuit-pattern"></div>
+        
+        <!-- Neural decoration lines -->
+        <div class="neural-line" style="width: 120px; top: 25%; left: 10%;"></div>
+        <div class="neural-line" style="width: 80px; top: 35%; left: 15%;"></div>
+        <div class="neural-line" style="width: 150px; top: 45%; left: 5%;"></div>
+        <div class="neural-line" style="width: 100px; bottom: 30%; right: 20%; background: linear-gradient(90deg, transparent, #ffbf00);"></div>
+        
+        <!-- Neural pulse animations -->
+        <div class="neural-pulse" style="top: 25%; left: 10%;"></div>
+        <div class="neural-pulse" style="top: 45%; left: 5%;"></div>
+        <div class="neural-pulse" style="bottom: 30%; right: 20%; background: #ffbf00;"></div>
+        
+        <!-- Left image section -->
+        <div class="w-5/12 flex items-center justify-center p-8 relative">
+            <div class="image-container w-full h-96 transform rotate-2">
+                <img src="/home/ubuntu/flordesk_presentacion/student_cyberpunk.png" alt="Estudiante usando FlorDesk" class="w-full h-full object-cover">
+            </div>
+            
+            <!-- Data points overlay -->
+            <div class="absolute top-24 left-8 bg-black bg-opacity-70 p-3 border-l-4 border-amber-400 max-w-xs transform -rotate-3">
+                <p class="text-cyan-300 text-sm font-medium">
+                    El usuario final es el nodo central de nuestra red de organización creativa.
+                </p>
+            </div>
+        </div>
+        
+        <!-- Right content section -->
+        <div class="w-7/12 flex flex-col justify-center pr-16 pl-8 py-12 relative z-10">
+            <h1 class="title-text text-5xl font-black text-cyan-400 mb-6 tracking-wider transform -skew-x-6">
+                CONEXIÓN USUARIO
+            </h1>
+            
+            <div class="w-32 h-1 bg-gradient-to-r from-cyan-400 to-amber-400 mb-8 ml-4"></div>
+            
+            <div class="space-y-6 text-white ml-4">
+                <p class="accent-text text-2xl font-bold text-amber-400 tracking-wide">
+                    SIMBIOSIS DE MERCADO
+                </p>
+                
+                <p class="text-xl font-light opacity-90 leading-relaxed">
+                    FlorDesk establece una <span class="text-cyan-300">interfaz física</span> optimizada para el flujo de trabajo del estudiante moderno, fusionando estética y productividad.
+                </p>
+                
+                <div class="space-y-4 mt-6">
+                    <div class="interface-item">
+                        <h3 class="text-lg font-semibold text-cyan-300">ESTUDIANTES CREATIVOS</h3>
+                        <p class="text-sm opacity-80">Buscando un entorno de estudio que potencie su identidad y enfoque digital.</p>
+                    </div>
+                    
+                    <div class="interface-item">
+                        <h3 class="text-lg font-semibold text-cyan-300">PADRES CONSCIENTES</h3>
+                        <p class="text-sm opacity-80">Inversión en herramientas que promueven el orden y la responsabilidad ecológica.</p>
+                    </div>
+                    
+                    <div class="interface-item">
+                        <h3 class="text-lg font-semibold text-cyan-300">REGALOS CON PROPÓSITO</h3>
+                        <p class="text-sm opacity-80">Buscando objetos únicos que rompan la monotonía del escritorio tradicional.</p>
+                    </div>
+                </div>
+                
+                <p class="accent-text text-xl font-bold text-amber-300 tracking-wider mt-6 italic">
+                    "El orden es la red neuronal que conecta la idea con la ejecución"
+                </p>
+            </div>
+        </div>
+        
+        <!-- Artistic page number -->
+        <div class="absolute bottom-8 right-8 text-cyan-400 text-2xl font-bold opacity-60">
+            <div class="w-12 h-12 border-2 border-amber-400 flex items-center justify-center transform rotate-12">
+                04
+            </div>
+        </div>
+    </div>
+</body>
+</html>

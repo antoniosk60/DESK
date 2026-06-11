@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlorDesk - Informe Neón</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a0a1a 50%, #0a0a1a 100%);
+            color: #ffffff;
+            font-family: 'Rajdhani', sans-serif;
+            line-height: 1.8;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 40px;
+        }
+        
+        .header {
+            text-align: center;
+            border-bottom: 3px solid #ffbf00;
+            padding-bottom: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .header h1 {
+            font-family: 'Orbitron', monospace;
+            font-size: 4rem;
+            color: #00ffff;
+            text-shadow: 0 0 20px #00ffff;
+            margin-bottom: 10px;
+            letter-spacing: 4px;
+        }
+        
+        .header p {
+            font-size: 1.5rem;
+            color: #ffbf00;
+            text-shadow: 0 0 10px #ffbf00;
+            letter-spacing: 2px;
+        }
+        
+        .section {
+            margin-bottom: 80px;
+            border-left: 4px solid #ffbf00;
+            padding-left: 30px;
+        }
+        
+        .section h2 {
+            font-family: 'Orbitron', monospace;
+            font-size: 2.5rem;
+            color: #00ffff;
+            text-shadow: 0 0 15px #00ffff;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+        
+        .section h3 {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.8rem;
+            color: #ffbf00;
+            text-shadow: 0 0 10px #ffbf00;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+        
+        .section p {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: #e0e0e0;
+            margin-bottom: 15px;
+        }
+        
+        .highlight {
+            background: rgba(0, 255, 255, 0.1);
+            border-left: 3px solid #00ffff;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+        }
+        
+        .highlight-amber {
+            background: rgba(255, 191, 0, 0.1);
+            border-left: 3px solid #ffbf00;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 0 15px rgba(255, 191, 0, 0.2);
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .grid-item {
+            border: 1px solid #00ffff;
+            padding: 25px;
+            background: rgba(0, 255, 255, 0.05);
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
+        }
+        
+        .grid-item h4 {
+            color: #00ffff;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 8px #00ffff;
+        }
+        
+        .grid-item p {
+            font-size: 0.95rem;
+            color: #b0b0b0;
+        }
+        
+        .image-section {
+            text-align: center;
+            margin: 40px 0;
+            border: 2px solid #ffbf00;
+            padding: 20px;
+            background: rgba(255, 191, 0, 0.05);
+            box-shadow: 0 0 20px rgba(255, 191, 0, 0.2);
+        }
+        
+        .image-section img {
+            max-width: 100%;
+            height: auto;
+            max-height: 400px;
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+        }
+        
+        .image-caption {
+            color: #ffbf00;
+            font-size: 0.9rem;
+            margin-top: 10px;
+            font-style: italic;
+        }
+        
+        .quote-box {
+            border: 2px solid #ffbf00;
+            padding: 30px;
+            margin: 40px 0;
+            background: rgba(255, 191, 0, 0.08);
+            text-align: center;
+            box-shadow: 0 0 20px rgba(255, 191, 0, 0.15);
+        }
+        
+        .quote-box p {
+            font-size: 1.3rem;
+            color: #ffbf00;
+            font-style: italic;
+            text-shadow: 0 0 10px #ffbf00;
+        }
+        
+        .footer {
+            border-top: 3px solid #ffbf00;
+            padding-top: 40px;
+            margin-top: 80px;
+            text-align: center;
+            color: #888;
+        }
+        
+        .footer p {
+            font-size: 0.9rem;
+            margin: 5px 0;
+        }
+        
+        .accent-line {
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(90deg, #00ffff, #ffbf00);
+            margin: 20px auto;
+        }
+        
+        @media (max-width: 768px) {
+            .grid { grid-template-columns: 1fr; }
+            .header h1 { font-size: 2.5rem; }
+            .section h2 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <div class="header">
+            <h1>FLORDESK</h1>
+            <p>ORGANIZADORES DE ESCRITORIO ECOLÓGICOS Y CREATIVOS</p>
+            <div class="accent-line"></div>
+        </div>
+        
+        <!-- SECCIÓN 1: INTRODUCCIÓN -->
+        <div class="section">
+            <h2>01. INTRODUCCIÓN</h2>
+            <p>FlorDesk es una microempresa innovadora dedicada al diseño y fabricación de organizadores de escritorio en forma de flor, elaborados con cartón reciclado de alta densidad. La propuesta combina funcionalidad, estética y conciencia ambiental en un solo artículo escolar.</p>
+            
+            <div class="highlight">
+                <p><strong>Misión:</strong> Transformar el espacio de estudio de los estudiantes mediante organizadores creativos que promueven el orden, la productividad y la responsabilidad ambiental.</p>
+            </div>
+            
+            <div class="image-section">
+                <img src="/home/ubuntu/flordesk_presentacion/hero_organizer.png" alt="Organizador FlorDesk">
+                <p class="image-caption">Organizador FlorDesk con diseño floral inspirado en la naturaleza</p>
+            </div>
+        </div>
+        
+        <!-- SECCIÓN 2: EL PROBLEMA -->
+        <div class="section">
+            <h2>02. EL PROBLEMA</h2>
+            <p>Muchos estudiantes acumulan lápices, colores, plumones, plumas, borradores y otros materiales en su espacio de trabajo sin una estructura clara. Este desorden genera varios problemas:</p>
+            
+            <div class="grid">
+                <div class="grid-item">
+                    <h4>FRAGMENTACIÓN</h4>
+                    <p>Materiales dispersos sin organización clara, dificultando su localización rápida.</p>
+                </div>
+                <div class="grid-item">
+                    <h4>PÉRDIDA DE TIEMPO</h4>
+                    <p>Búsqueda constante de herramientas que afecta la concentración y productividad.</p>
+                </div>
+                <div class="grid-item">
+                    <h4>ESTRÉS VISUAL</h4>
+                    <p>El desorden visual impacta negativamente en el ambiente de estudio y la motivación.</p>
+                </div>
+            </div>
+            
+            <div class="highlight-amber">
+                <p><strong>Oportunidad:</strong> Existe una demanda clara por soluciones de organización que sean prácticas, estéticas y accesibles para estudiantes.</p>
+            </div>
+        </div>
+        
+        <!-- SECCIÓN 3: EL PRODUCTO -->
+        <div class="section">
+            <h2>03. EL PRODUCTO</h2>
+            <p>El organizador FlorDesk es un diseño único que combina forma y función de manera innovadora.</p>
+            
+            <h3>Características Principales:</h3>
+            <ul style="margin-left: 20px; margin-bottom: 20px;">
+                <li style="margin-bottom: 10px;"><strong style="color: #ffbf00;">Forma Floral:</strong> Compartimentos inspirados en pétalos que permiten clasificar diferentes tipos de útiles escolares.</li>
+                <li style="margin-bottom: 10px;"><strong style="color: #ffbf00;">Material Sostenible:</strong> Fabricado con cartón reciclado de alta densidad que garantiza durabilidad y resistencia.</li>
+                <li style="margin-bottom: 10px;"><strong style="color: #ffbf00;">Diseño Colorido:</strong> Acabados en colores vibrantes que transforman el escritorio en un espacio inspirador.</li>
+                <li style="margin-bottom: 10px;"><strong style="color: #ffbf00;">Funcionalidad Optimizada:</strong> Cada compartimento está diseñado para maximizar el espacio y la accesibilidad.</li>
+            </ul>
+            
+            <div class="image-section">
+                <img src="/home/ubuntu/flordesk_presentacion/cardboard_neon.png" alt="Material de FlorDesk">
+                <p class="image-caption">Cartón reciclado de alta densidad utilizado en la fabricación</p>
+            </div>
+        </div>
+        
+        <!-- SECCIÓN 4: VALOR AGREGADO -->
+        <div class="section">
+            <h2>04. VALOR AGREGADO</h2>
+            <p>FlorDesk se diferencia en el mercado por ofrecer una propuesta integral que va más allá del simple almacenamiento:</p>
+            
+            <div class="highlight">
+                <h3 style="margin-top: 0;">Sostenibilidad Radical</h3>
+                <p>El uso de cartón reciclado no es una opción, es la estructura fundamental. Cada producto contribuye a reducir el desperdicio y promueve la conciencia ambiental entre estudiantes.</p>
+            </div>
+            
+            <div class="highlight-amber">
+                <h3 style="margin-top: 0;">Estética Ciberpunk</h3>
+                <p>El diseño neón y moderno atrae a estudiantes que buscan un entorno de estudio que refleje su identidad digital y creativa.</p>
+            </div>
+            
+            <div class="highlight">
+                <h3 style="margin-top: 0;">Funcionalidad Probada</h3>
+                <p>Cada compartimento está optimizado para tipos específicos de útiles, mejorando la experiencia de uso y la productividad.</p>
+            </div>
+        </div>
+        
+        <!-- SECCIÓN 5: MERCADO OBJETIVO -->
+        <div class="section">
+            <h2>05. MERCADO OBJETIVO</h2>
+            <p>FlorDesk se dirige a múltiples segmentos de mercado con propuestas diferenciadas:</p>
+            
+            <div class="grid">
+                <div class="grid-item">
+                    <h4>ESTUDIANTES CREATIVOS</h4>
+                    <p>Buscando un entorno de estudio que potencie su identidad y enfoque digital. Edad: 12-25 años.</p>
+                </div>
+                <div class="grid-item">
+                    <h4>PADRES CONSCIENTES</h4>
+                    <p>Inversión en herramientas que promueven el orden y la responsabilidad ecológica. Edad: 30-55 años.</p>
+                </div>
+                <div class="grid-item">
+                    <h4>REGALOS CON PROPÓSITO</h4>
+                    <p>Buscando objetos únicos que rompan la monotonía del escritorio tradicional. Ocasiones especiales.</p>
+                </div>
+            </div>
+            
+            <div class="image-section">
+                <img src="/home/ubuntu/flordesk_presentacion/student_cyberpunk.png" alt="Estudiante usando FlorDesk">
+                <p class="image-caption">Usuario objetivo: estudiante moderno y consciente del ambiente</p>
+            </div>
+        </div>
+        
+        <!-- SECCIÓN 6: PRODUCCIÓN -->
+        <div class="section">
+            <h2>06. PROCESO DE PRODUCCIÓN</h2>
+            <p>La fabricación de FlorDesk fusiona la artesanía tradicional con ingeniería de precisión:</p>
+            
+            <h3>Fases del Proceso:</h3>
+            <ol style="margin-left: 20px; margin-bottom: 20px;">
+                <li style="margin-bottom: 15px;"><strong style="color: #ffbf00;">Síntesis de Material:</strong> Selección rigurosa de cartón reciclado de alta densidad para asegurar integridad estructural.</li>
+                <li style="margin-bottom: 15px;"><strong style="color: #ffbf00;">Corte de Precisión:</strong> Modelado exacto de piezas que conformarán los compartimentos inspirados en la naturaleza.</li>
+                <li style="margin-bottom: 15px;"><strong style="color: #ffbf00;">Ensamblaje:</strong> Unión de componentes con técnicas que garantizan durabilidad y estabilidad.</li>
+                <li style="margin-bottom: 15px;"><strong style="color: #ffbf00;">Acabados Estéticos:</strong> Aplicación de colores y diseños que reflejan la identidad neón de la marca.</li>
+            </ol>
+            
+            <div class="quote-box">
+                <p>"La fabricación artesanal es la base de nuestra infraestructura creativa"</p>
+            </div>
+        </div>
+        
+        <!-- SECCIÓN 7: IDENTIDAD DE MARCA -->
+        <div class="section">
+            <h2>07. IDENTIDAD DE MARCA</h2>
+            <p>FlorDesk transmite un mensaje claro a través de su identidad visual y conceptual:</p>
+            
+            <h3>Pilares de Marca:</h3>
+            <div class="grid">
+                <div class="grid-item">
+                    <h4>CREATIVIDAD</h4>
+                    <p>Diseños que rompen la monotonía del estudio convencional y celebran la individualidad.</p>
+                </div>
+                <div class="grid-item">
+                    <h4>RESPONSABILIDAD</h4>
+                    <p>Compromiso radical con materiales reciclados y prácticas sostenibles.</p>
+                </div>
+                <div class="grid-item">
+                    <h4>ALEGRÍA</h4>
+                    <p>Colores y formas que inspiran un entorno de trabajo positivo y motivador.</p>
+                </div>
+            </div>
+            
+            <div class="highlight-amber">
+                <p><strong>Eslogan:</strong> "Organización con Alma Sostenible"</p>
+                <p style="margin-top: 10px;">El nombre FlorDesk une dos conceptos: "Flor" por la forma creativa del producto, y "Desk" que significa escritorio, transmitiendo orden, creatividad, alegría y responsabilidad ambiental.</p>
+            </div>
+        </div>
+        
+        <!-- SECCIÓN 8: CONCLUSIÓN -->
+        <div class="section">
+            <h2>08. CONCLUSIÓN</h2>
+            <p>FlorDesk es una microempresa con una propuesta sencilla, útil y atractiva para estudiantes modernos. Su organizador de escritorio en forma de flor ayuda a mantener los útiles escolares en orden mientras fomenta el uso creativo del cartón reciclado.</p>
+            
+            <div class="quote-box">
+                <p>"El orden no es solo una meta, es el punto de partida para una mente creativa y sostenible"</p>
+            </div>
+            
+            <p>La empresa demuestra que una idea ecológica puede convertirse en un producto práctico, decorativo y con valor real para la comunidad escolar. Con FlorDesk, cada estudiante tiene la oportunidad de transformar su espacio de estudio en un reflejo de su identidad creativa y responsabilidad ambiental.</p>
+        </div>
+        
+        <!-- FOOTER -->
+        <div class="footer">
+            <p>FlorDesk © 2026 | Organizadores de Escritorio Ecológicos</p>
+            <p>Diseño Neón • Cartón Reciclado • Creatividad Sostenible</p>
+        </div>
+    </div>
+</body>
+</html>
